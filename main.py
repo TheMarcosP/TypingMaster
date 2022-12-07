@@ -2,11 +2,14 @@ import numpy as np
 import cv2
 import pyautogui
 import time
+import pytesseract
+
 
 pyautogui.PAUSE = 0.01
 
-def getTextFromImage()-> str:
-    ...
+def getTextFromImage(image)-> str:
+    return (pytesseract.image_to_string(image, lang='eng'))
+
 
 def typeString(string: str):
     for i in range(len(string)):
